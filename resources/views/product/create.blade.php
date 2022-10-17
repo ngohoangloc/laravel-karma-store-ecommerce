@@ -31,11 +31,17 @@
                             @csrf
                             <div class="form-group">
                                 <label>Tên sản phẩm</label>
-                                <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="name" >
+                                <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="name" class="@error('name') is-invalid border border-danger @enderror">
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Giá sản phẩm</label>
-                                <input type="text" class="form-control" placeholder="Nhập giá sản phẩm" name="price" >
+                                <input type="text" class="form-control" placeholder="Nhập giá sản phẩm" name="price" class="@error('price') is-invalid @enderror" >
+                                @error('price')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Ảnh đại diện sản phẩm</label>
@@ -47,21 +53,30 @@
                             </div>
                             <div class="form-group">
                                 <label>Danh mục sản phẩm</label>
-                                <select class="form-control select2_init" name="category_id" >
-                                    <option value="0">Chọn danh mục</option>
+                                <select class="form-control select2_init @error('category_id') is-invalid @enderror " name="category_id" class="">
+                                    <option value="">Chọn danh mục</option>
                                     {!! $htmlOption !!}
                                 </select>
+                                @error('category_id')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Nhập tags cho danh mục</label>
-                                <select class="form-control tag_select_choose" multiple="multiple" name="tags[]">
+                                <select class="form-control tag_select_choose @error('tags') is-invalid @enderror" multiple="multiple" name="tags[]">
 
                                 </select>
+                                @error('tags')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label>Nhập nội dung</label>
-                                <textarea class="form-control" name="contents" rows="3"></textarea>
+                                <textarea class="form-control @error('contents') is-invalid @enderror" name="contents" rows="3" ></textarea>
+                                @error('contents')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

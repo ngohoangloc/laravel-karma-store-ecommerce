@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Traits;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-
+use App\Http\Requests\ProductRequest;
 class ProductController extends Controller
 {
     use Traits\StorageImageTrait;
@@ -49,7 +49,7 @@ class ProductController extends Controller
         return $htmlOption;
     }
 
-    public function store (Request $request){
+    public function store (ProductRequest $request){
 
         try {
             DB::beginTransaction();

@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [
+    'as' => 'home.home',
+    'uses' => 'App\Http\Controllers\HomeController@index'
+]);
+Route::get('/shop', [
+    'as' => 'home.shop',
+    'uses' => 'App\Http\Controllers\HomeController@shop'
+]);
+
+Route::get('/viewcategory/{slug}' ,[\App\Http\Controllers\HomeController::class , 'viewCategory']);
 Route::get('/home', function () {
     return view('home');
 });

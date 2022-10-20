@@ -18,12 +18,15 @@ Route::get('/', [
     'as' => 'home.home',
     'uses' => 'App\Http\Controllers\HomeController@index'
 ]);
+
+
 Route::get('/shop', [
     'as' => 'home.shop',
     'uses' => 'App\Http\Controllers\HomeController@shop'
 ]);
 
 Route::get('/viewcategory/{slug}' ,[\App\Http\Controllers\HomeController::class , 'viewCategory']);
+
 Route::get('/home', function () {
     return view('home');
 });
@@ -97,3 +100,9 @@ Route::prefix('product')->group(function () {
         'uses' => 'App\Http\Controllers\ProductController@destroy'
     ]);
 });
+
+
+Route::get('cart', [\App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [\App\Http\Controllers\ProductController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [\App\Http\Controllers\ProductController::class, 'updatecart'])->name('update.cart');
+Route::delete('remove-from-cart', [\App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');

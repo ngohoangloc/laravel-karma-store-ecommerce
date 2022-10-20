@@ -13,10 +13,9 @@ class HomeController extends Controller
         return view('home.home');
     }
 
-
     public function shop(){
         $category = Category::where('parent_id' ,0)->get();
-        $product = Product::latest()->simplePaginate(1);
+        $product = Product::latest()->simplePaginate(6);
         return view('home.shop', compact('category','product'));
     }
 

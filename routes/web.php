@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
-
-=======
 
 Route::get('/', [
     'as' => 'home.home',
@@ -30,7 +24,7 @@ Route::get('/shop', [
 ]);
 
 Route::get('/viewcategory/{slug}' ,[\App\Http\Controllers\HomeController::class , 'viewCategory']);
->>>>>>> 8306b3a6620a7d08023893795f28df15530dcdf1
+
 Route::get('/home', function () {
     return view('home');
 });
@@ -69,8 +63,6 @@ Route::prefix('categories')->group(function () {
         'uses' => 'App\Http\Controllers\CategoryController@delete'
     ]);
 });
-<<<<<<< HEAD
-=======
 
 Route::prefix('product')->group(function () {
     Route::get('/', [
@@ -106,4 +98,3 @@ Route::prefix('product')->group(function () {
         'uses' => 'App\Http\Controllers\ProductController@destroy'
     ]);
 });
->>>>>>> 8306b3a6620a7d08023893795f28df15530dcdf1

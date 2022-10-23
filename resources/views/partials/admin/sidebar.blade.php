@@ -67,7 +67,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
+                    <a href="#" class="nav-link">
+=======
                     <a href="{{ route('product.index') }} " class="nav-link">
+>>>>>>> 8306b3a6620a7d08023893795f28df15530dcdf1
                         <i class="nav-icon fas fa-archive"></i>
                         <p>
                             Sản phẩm

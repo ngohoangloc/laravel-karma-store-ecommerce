@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', [
     'as' => 'home.home',
     'uses' => 'App\Http\Controllers\HomeController@index'

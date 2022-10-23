@@ -13,24 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
-
-=======
-
 Route::get('/', [
     'as' => 'home.home',
     'uses' => 'App\Http\Controllers\HomeController@index'
 ]);
+
+
 Route::get('/shop', [
     'as' => 'home.shop',
     'uses' => 'App\Http\Controllers\HomeController@shop'
 ]);
 
 Route::get('/viewcategory/{slug}' ,[\App\Http\Controllers\HomeController::class , 'viewCategory']);
->>>>>>> 8306b3a6620a7d08023893795f28df15530dcdf1
+
 Route::get('/home', function () {
     return view('home');
 });
@@ -69,8 +64,6 @@ Route::prefix('categories')->group(function () {
         'uses' => 'App\Http\Controllers\CategoryController@delete'
     ]);
 });
-<<<<<<< HEAD
-=======
 
 Route::prefix('product')->group(function () {
     Route::get('/', [
@@ -106,4 +99,9 @@ Route::prefix('product')->group(function () {
         'uses' => 'App\Http\Controllers\ProductController@destroy'
     ]);
 });
->>>>>>> 8306b3a6620a7d08023893795f28df15530dcdf1
+
+
+Route::get('cart', [\App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [\App\Http\Controllers\ProductController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [\App\Http\Controllers\ProductController::class, 'updatecart'])->name('update.cart');
+Route::delete('remove-from-cart', [\App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');

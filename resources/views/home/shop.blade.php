@@ -72,7 +72,7 @@
                                         <h6>{{number_format($productI->price ) }} VND</h6>
                                     </div>
                                     <div class="prd-bottom">
-                                        <a href="" class="social-info">
+                                        <a href="{{route('add.to.cart', $productI->id)}}" class="social-info">
                                             <span class="ti-bag"></span>
                                             <p class="hover-text">add to bag</p>
                                         </a>

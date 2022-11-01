@@ -1,6 +1,10 @@
 
 @extends('layouts.master')
 
+@section('title')
+    <title>{{ $category->name }}</title>
+@endsection
+
 @section('content')
 
     <!-- Start Banner Area -->

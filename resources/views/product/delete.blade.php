@@ -21,11 +21,6 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
-                        <a href="{{ route('product.index') }}" class="btn btn-success float-right m-2">Tất cả sản phẩm</a>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col-md-4" >
                         <form action="{{ route('product.destroy' ,['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf

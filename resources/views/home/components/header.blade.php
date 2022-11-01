@@ -15,10 +15,9 @@
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item active"><a class="nav-link" href="{{ route('home.home') }}">Home</a></li>
                         <li class="nav-item "><a class="nav-link" href="{{ route('home.shop') }}">Shop</a></li>
-
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
+                        <li class="nav-item"><a href="/cart" class="cart"><span class="ti-bag"></span></a></li>
                         <li class="nav-item"><a href="#" class="user"><span class="ti-user"></span></a></li>
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
